@@ -1,0 +1,22 @@
+services:
+  samba:
+    build: .
+    container_name: hp-scanner-smb
+    restart: unless-stopped
+    ports:
+      - "445:445/tcp"
+    environment:
+      SMB_PASSWORD: "${SMB_PASSWORD}"
+      SMB_UID: "${SMB_UID:-2000}"
+      SMB_GID: "${SMB_GID:-2000}"
+    volumes:
+      - /srv/hp-scans:/srv/scans
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - SETGID
+      - SETUID
