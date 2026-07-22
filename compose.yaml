@@ -13,10 +13,3 @@ services:
       - /srv/hp-scans:/srv/scans
     security_opt:
       - no-new-privileges:true
-    cap_drop:
-      - ALL
-    cap_add:
-      - CHOWN
-      - DAC_OVERRIDE
-      - SETGID
-      - SETUID
