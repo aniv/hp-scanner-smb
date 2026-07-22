@@ -120,7 +120,6 @@ Common failure points:
 - **Connection refused:** container is stopped, port 445 is blocked, or another Samba service already uses port 445 on the VM.
 - **Authentication failed:** re-enter the username as `scanner`; leave domain blank or use `WORKGROUP`; verify the password.
 - **Folder test works but scans fail:** confirm `/srv/hp-scans` ownership and free disk space, then inspect container logs.
-- **Scanner requires SMB1:** update the printer firmware first. Do not enable SMB1 unless there is no alternative; it is obsolete and materially weaker than SMB2/SMB3.
 - **Scanner cannot find the hostname:** use the VM's numeric IP and `\\VM-IP\scans`.
 
 ## Backup
